@@ -1,4 +1,11 @@
 /* exported data, writeData */
+interface Entry {
+  entryId: number;
+  title: string;
+  photoUrl: string;
+  notes: string;
+}
+
 interface Data {
   view: 'entries' | 'entry-form';
   entries: Entry[];
@@ -10,7 +17,7 @@ const dataKey = 'code-journal-data';
 
 const data = readData();
 
-function readData(): Data {
+export function readData(): Data {
   let data: Data;
   const localData = localStorage.getItem(dataKey);
   if (localData) {
@@ -26,8 +33,7 @@ function readData(): Data {
   return data;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars -- exported
-function writeData(): void {
+export function writeData(): void {
   const dataJSON = JSON.stringify(data);
   localStorage.setItem(dataKey, dataJSON);
 }
