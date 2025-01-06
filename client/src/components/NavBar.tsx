@@ -6,9 +6,12 @@ export function NavBar() {
       <div>
         <header>
           <div className="container">
-            <nav className="navbar column-full">
-              <Link to="entries">Entries</Link>
-            </nav>
+            <div className="row">
+              <h1>Code Journal</h1>
+              <nav className="navbar column-full">
+                <Link to="entries">Entries</Link>
+              </nav>
+            </div>
           </div>
         </header>
         <Outlet></Outlet>
